@@ -1,3 +1,5 @@
+import CounterSectionStyled from "./CounterSectionStyled";
+
 interface CounterSectionProps {
   name: string;
   number: string;
@@ -5,10 +7,10 @@ interface CounterSectionProps {
 
 const CounterSection = ({ name, number }: CounterSectionProps): JSX.Element => {
   return (
-    <li>
-      <span>{number}</span>
-      <span>{name}</span>
-    </li>
+    <CounterSectionStyled>
+      <span className="counter__number">{number}</span>
+      <span className="counter__name">{name}</span>
+    </CounterSectionStyled>
   );
 };
 
