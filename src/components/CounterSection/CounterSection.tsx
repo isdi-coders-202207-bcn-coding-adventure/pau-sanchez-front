@@ -6,9 +6,7 @@ interface CounterSectionProps {
 const CounterSection = ({ name, number }: CounterSectionProps): JSX.Element => {
   return (
     <li>
-      <div>
-        <span>{number}</span>
-      </div>
+      <span>{number}</span>
       <span>{name}</span>
     </li>
   );
