@@ -2,5 +2,4 @@ CODING ADVENTURE
 
 1. ¿Cuándo tengo que usar useCallback()?
 
-- Cuando queremos que una función sólo sea ejecutada cuando aquello que le pasamos por la array de dependencias haya cambiado.
-  Esto nos sirve para evitar renderizados innecesarios y bucles infinitos.
+- Cuando quiero memoizar una función. Con useCallback guardamos una referencia de la función que le pasamos por argumentos, una instancia de la función callback. useCallback devolverà esa misma instancia hasta que cambie alguna de las dependencias especificadas, y en ese momento actualizará la referencia y se ejecutará de nuevo.
