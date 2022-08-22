@@ -9,7 +9,7 @@ const CounterSection = ({ name, number }: CounterSectionProps): JSX.Element => {
   return (
     <CounterSectionStyled>
       <span className="counter__number">{number}</span>
-      <span>{name}</span>
+      <span className="counter__name">{name}</span>
     </CounterSectionStyled>
   );
 };
