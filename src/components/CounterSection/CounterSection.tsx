@@ -2,7 +2,7 @@ import CounterSectionStyled from "./CounterSectionStyled";
 
 interface CounterSectionProps {
   name: string;
-  number: string;
+  number: number;
 }
 
 const CounterSection = ({ name, number }: CounterSectionProps): JSX.Element => {

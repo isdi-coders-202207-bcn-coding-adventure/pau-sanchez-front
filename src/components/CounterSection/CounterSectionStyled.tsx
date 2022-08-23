@@ -15,8 +15,6 @@ const CounterSectionStyled = styled.li`
     border-radius: 25px;
     align-items: center;
     justify-content: center;
-    justify-self: center;
-    align-self: center;
     display: flex;
     color: rgb(48, 48, 118);
     font-size: 2rem;

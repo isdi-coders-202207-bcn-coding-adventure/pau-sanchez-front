@@ -7,3 +7,5 @@ CODING ADVENTURE
 Fase 2: Tienes que crear un componente que muestre una cuenta atrás en el tiempo. En la imagen counter.png de raíz puedes ver cómo tiene que quedar. En este punto tendrás que crear sólo el HTML y hacer que el contador se vea en pantalla.
 
 Fase 3: Dale estilos al componente contador (utiliza styled-components).
+
+Dale la funcionalidad. Guarda la fecha clave en una constante que puedas usar en cualquier componente.
