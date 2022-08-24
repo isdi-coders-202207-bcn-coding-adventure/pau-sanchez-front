@@ -38,7 +38,6 @@ const BackwardsCounter = ({
   useEffect(() => {
     const interval = setInterval(() => {
       getActualTime();
-      console.log(timerObject);
       setSeconds(seconds - 1);
     }, 1000);
 
