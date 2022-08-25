@@ -9,3 +9,5 @@ Fase 2: Tienes que crear un componente que muestre una cuenta atrás en el tiemp
 Fase 3: Dale estilos al componente contador (utiliza styled-components).
 
 Dale la funcionalidad. Guarda la fecha clave en una constante que puedas usar en cualquier componente.
+
+Fase 6. Crea dos rutas: /home y /register. En /home debe verse el contador si aún no ha llegado la fecha clave, y si ya ha pasado debe verse un encabezado.
