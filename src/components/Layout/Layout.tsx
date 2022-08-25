@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import BackwardsCounter from "../BackwardsCounter/BackwardsCounter";
 import Header from "../Header/Header";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 const StyledContainer = styled.div`
   margin: 0 auto;
@@ -41,7 +42,21 @@ const Layout = (): JSX.Element => {
     <StyledContainer>
       <Header />
       <h2>{"(●'◡'●) Time left to finish the bootcamp (●'◡'●)"}</h2>
-      <BackwardsCounter difference={difference} timerObject={timerObject} />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navigate to="/home" />} />
+          <Route
+            path="/:home"
+            element={
+              <BackwardsCounter
+                difference={difference}
+                timerObject={timerObject}
+              />
+            }
+          />
+          <Route path="/:register" element={null} />
+        </Routes>
+      </BrowserRouter>
     </StyledContainer>
   );
 };

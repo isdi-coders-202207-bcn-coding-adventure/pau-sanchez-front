@@ -9,18 +9,23 @@ interface BackwardsCounterProps {
 }
 
 const initialTimerObject = {
-  seconds: 0,
-  minutes: 0,
-  hours: 0,
-  days: 0,
+  seconds: 1,
+  minutes: 1,
+  hours: 1,
+  days: 1,
 };
 
 const BackwardsCounter = ({
   difference,
   timerObject,
 }: BackwardsCounterProps): JSX.Element => {
+  const [end, setEnd] = useState(false);
   const [time, setTime] = useState(initialTimerObject);
   const [seconds, setSeconds] = useState(difference);
+
+  const endTimer = () => {
+    setEnd(true);
+  };
 
   const getActualTime = useCallback(() => {
     timerObject.seconds = Math.floor(seconds % 60);
@@ -35,9 +40,20 @@ const BackwardsCounter = ({
     });
   }, [seconds, timerObject]);
 
+  const checkIfReachedGoal = () => {
+    if (
+      time.seconds === 0 &&
+      time.minutes === 0 &&
+      time.hours === 0 &&
+      time.days === 0
+    )
+      endTimer();
+  };
+
   useEffect(() => {
     const interval = setInterval(() => {
       getActualTime();
+      checkIfReachedGoal();
       setSeconds(seconds - 1);
     }, 1000);
 
@@ -46,10 +62,16 @@ const BackwardsCounter = ({
 
   return (
     <BackwardsCounterStyled>
-      <CounterSection number={time.days} name="days" />
-      <CounterSection number={time.hours} name="hours" />
-      <CounterSection number={time.minutes} name="minutes" />
-      <CounterSection number={time.seconds} name="seconds" />
+      {end ? (
+        <h2>Date reached!</h2>
+      ) : (
+        <>
+          <CounterSection number={time.days} name="days" />
+          <CounterSection number={time.hours} name="hours" />
+          <CounterSection number={time.minutes} name="minutes" />
+          <CounterSection number={time.seconds} name="seconds" />
+        </>
+      )}
     </BackwardsCounterStyled>
   );
 };
